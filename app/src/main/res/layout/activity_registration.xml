@@ -1,14 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrationActivity">
+    tools:context=".RegistrationActivity"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
 
     <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:letterSpacing="2dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/tv" />
+        android:text="Registration"
+        android:id="@+id/reg"
+        android:textSize="50sp"
+        />
 
-</LinearLayout>
+    <EditText
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/reg"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:hint="User name"
+        android:id="@+id/username"
+        />
+
+    <EditText
+        android:layout_below="@+id/username"
+        android:layout_centerHorizontal="true"
+        android:inputType="number"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:hint="mobile no."
+        android:id="@+id/mobileno"
+        />
+
+    <EditText
+        android:layout_below="@+id/mobileno"
+        android:layout_centerHorizontal="true"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:hint="password"
+        android:id="@+id/password"
+        />
+
+    <EditText
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:hint="confirm password"
+        android:id="@+id/conpassword"
+        />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/register"
+        android:layout_below="@+id/conpassword"
+        />
+
+
+</RelativeLayout>
