@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Chat_Application</string>
+    <string name="app_name">ChitChat</string>
     <string name="title_activity_settings">Settings</string>
 
     <!-- Preference Titles -->
