@@ -17,14 +17,14 @@
         android:textSize="25sp" />
 
     <EditText
-        android:id="@+id/etphone"
+        android:id="@+id/etemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etusername"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:hint="phone number"
-        android:inputType="phone"
+        android:hint="email"
+        android:inputType="textEmailAddress"
         android:textAlignment="center"
         android:textSize="25sp" />
 
@@ -32,7 +32,7 @@
         android:id="@+id/etpass_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etphone"
+        android:layout_below="@+id/etemail"
         android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="password"
@@ -64,11 +64,12 @@
         android:textSize="25sp" />
 
     <TextView
+        android:id="@+id/tvlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnregis"
         android:ems="10"
-        android:onClick="user_login"
+        android:layout_marginTop="25dp"
         android:text="already a user?  login"
         android:textAlignment="center"
         android:textColor="#061af9"
