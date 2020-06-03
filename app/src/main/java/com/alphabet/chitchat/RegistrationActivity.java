@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class RegistrationActivity extends AppCompatActivity {
-    private EditText username, email, password;
+    private EditText username, email, password, conpassword;
     private Button register;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
@@ -35,6 +35,7 @@ public class RegistrationActivity extends AppCompatActivity {
         username = findViewById(R.id.etusername);
         email = findViewById(R.id.etemail);
         password = findViewById(R.id.etpass_reg);
+        conpassword = findViewById(R.id.etconpass_reg);
         firebaseAuth = FirebaseAuth.getInstance();
         login = findViewById(R.id.tvlogin);
         register = findViewById(R.id.btnregis);
@@ -50,14 +51,19 @@ public class RegistrationActivity extends AppCompatActivity {
                 String txt_username = username.getText().toString();
                 String txt_email = email.getText().toString();
                 String txt_password = password.getText().toString();
-                if (TextUtils.isEmpty(txt_username) || TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)) {
+                String txt_conpassword = conpassword.getText().toString();
+                if (TextUtils.isEmpty(txt_username) || TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password) | TextUtils.isEmpty(txt_conpassword)) {
                     Toast.makeText(RegistrationActivity.this, "All fields are required", Toast.LENGTH_LONG).show();
                 } else if (txt_password.length() < 8) {
                     Toast.makeText(RegistrationActivity.this, "password must be atleast 8 characters", Toast.LENGTH_LONG).show();
+                } else if (!txt_password.equals(txt_conpassword)) {
+                    Toast.makeText(RegistrationActivity.this, "password mismatch", Toast.LENGTH_LONG).show();
                 } else
                     Register(txt_username, txt_email, txt_password);
             }
         });
+        //here to code
+
 
     }
 
