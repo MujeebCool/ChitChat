@@ -5,13 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="top">
+
+    <include
+        layout="@layout/toolbar_layout"
+        android:id="@+id/toolbar" />
 
     <EditText
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/toolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etemail_log"
-        android:hint="enter your number"
+        android:hint="enter your email"
         android:textSize="25sp"
         android:inputType="textEmailAddress"
         android:layout_marginBottom="25dp"

@@ -2,6 +2,7 @@ package com.alphabet.chitchat;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.w3c.dom.Text;
 
@@ -29,11 +31,18 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Login");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //initialization
         tvregis = findViewById(R.id.tvregis);
         email = findViewById(R.id.etemail_log);
         password = findViewById(R.id.etpass_log);
         login = findViewById(R.id.btnlogin);
         firebaseAuth = FirebaseAuth.getInstance();
+
 
         tvregis.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,5 +80,15 @@ public class LoginActivity extends AppCompatActivity {
 
     private void Login(String email, String password) {
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+        if (firebaseUser != null) {
+            finish();
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+        }
     }
 }
