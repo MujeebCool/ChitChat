@@ -54,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("");
         TabLayout tabLayout = findViewById(R.id.tablayout);
         androidx.viewpager.widget.ViewPager viewPager = findViewById(R.id.view_pager);
-        profile_img = findViewById(R.id.profile_img);
+        profile_img = findViewById(R.id.profile_image);
         username = findViewById(R.id.username);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
